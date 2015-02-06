@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET home page. */
 router.get('/', function (req, res) {
-  res.render('index', {
-  });
+  var send = {
+     welcome : "node-serve!"
+  };
+  res.send(send);
 });
 
 router.post('/', function (req, res) {

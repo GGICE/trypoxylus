@@ -9,6 +9,7 @@ var monk = require('monk');
 var db = monk('localhost:27017/node-serve');
 
 var routes = require('./routes/index');
+var test = require('./routes/test');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(function(req,res,next){
 });
 
 app.use('/', routes);
+app.use('/test', test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
