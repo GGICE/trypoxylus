@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var debug = require('debug')('chi');
+var debug = require('debug')('node-serve');
 var app = require('../app');
 
 app.set('port', process.env.PORT || 7778);
