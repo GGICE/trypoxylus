@@ -1,8 +1,8 @@
-#####node-serve的用处：
+####node-serve的用处：
 
 node-serve是基于node.js搭建的后端框架(很简单暂且称为框架吧)，连接mongodb，可以实现和前端通过URL交换json数据，满足简单应用开发的后台需求。
 
-#####node-serve用到的一些依赖：
+####node-serve用到的一些依赖：
 
 1.node.js serve基于node.js架构。
 
@@ -15,7 +15,7 @@ node-serve是基于node.js搭建的后端框架(很简单暂且称为框架吧)�
 4.monk ([官网](http://www.mongodb.org/)) 
 一个操作mongodb的中间件。
 
-#####node-serve的文件结构和作用：
+####node-serve的文件结构和作用：
 整个文件结构就是expres的大体结构，只是增加数据的读写方法。
 
 -bin 目录：
@@ -60,7 +60,7 @@ package.json文件：
 
 声明依赖的一些资源包，通过npm install 安装这些依赖。
 	
-#####如何进行开发
+####如何进行开发
 
 1.安装supervisor (修改代码自动重启node程序)
 	
@@ -87,3 +87,4 @@ package.json文件：
     //启动node程序时加入参数 如
     supervisor --debug ./bin/www
     //浏览器访问127.0.0.1：8080即可进入调试模式
+    
