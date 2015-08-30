@@ -5,7 +5,6 @@ var router = require('koa-router')();
 var koa = require('koa');
 var mongoose = require('mongoose');
 var statics = require('koa-static-folder');
-var mongooseStore = require('koa-session-mongoose');
 var fs=require('fs');
 var app = module.exports = koa();
 

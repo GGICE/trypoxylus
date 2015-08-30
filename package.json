@@ -7,7 +7,6 @@
     "koa" : "^0.21.0",
     "koa-router" : "^5.1.2",
     "mongoose" : "^4.0.5",
-    "koa-static-folder" : "^0.1.5",
-    "co-body" : "^2.0.0"
+    "koa-static-folder" : "^0.1.5"
   }
 }
