@@ -1,6 +1,6 @@
 版本 0.0.3
 
-GSEVER 基于koe.js 的纯后端应用框架，主要用于创建REST API。
+GSEVER 基于koa.js 的纯后端应用框架，主要用于创建REST API。
 
 #####目录结构
 
