@@ -1,14 +1,13 @@
-"use strict";
-var mongoose = require("mongoose"),
-  user = mongoose.model('user');
+var mongoose = require("mongoose")
+  user = mongoose.model('user')
 
-module.exports = function*(next) {
-  var users = yield user.find({
+module.exports = async function (ctx, next) {
+  var users = await user.find({
     name: 'xiaoming'
   }).exec(function(doc, error) {
     if (error) {
-      console.log(error);
+      console.log(error)
     }
-  });
-  this.body = users;
-};
+  })
+  ctx.body = users
+}

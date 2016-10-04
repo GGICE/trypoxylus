@@ -1,6 +1,6 @@
-版本 0.0.3
+版本 2.0
 
-GSEVER 基于koa.js 的纯后端应用框架，主要用于创建REST API。
+GSEVER 基于koa.js 2的纯后端应用框架，主要用于创建REST API。
 
 #####目录结构
 
@@ -14,7 +14,7 @@ GSEVER 基于koa.js 的纯后端应用框架，主要用于创建REST API。
 
 
 #####试用
-启动(node 0.11.16 or higher )
+建议环境 node version 7.0 以上
 
 	node --harmony index.js
 
