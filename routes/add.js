@@ -1,4 +1,4 @@
-var mongoose = require("mongoose"),
+var mongoose = require('mongoose'),
   user = mongoose.model('user')
 
 module.exports = async function (ctx, next) {
