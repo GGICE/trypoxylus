@@ -1,4 +1,3 @@
-"use strict";
 module.exports = {
     'mongo' : {
         'host' : '127.0.0.1',
@@ -6,4 +5,4 @@ module.exports = {
         'database' : 'GSERVE'
     },
     'port' : '9001'
-};
+}
