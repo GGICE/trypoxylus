@@ -1,8 +1,7 @@
-"use strict";
-var mongoose = require("mongoose");
+var mongoose = require('mongoose')
 
-module.exports = function*(next) {
-    this.body = {
+module.exports = async function (ctx, next) {
+    ctx.body = {
       word : 'hello world!'
-    };
-};
+    }
+}
