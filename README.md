@@ -24,8 +24,8 @@ ant-create create projectName
  	|-routes.js route declaration 
  	|-package.json 
 
+### Run
 
-##### Run
 Support  node version 7.0 +
 
 	node --harmony index.js
@@ -37,8 +37,6 @@ Try a post request
 Try a get request （show the user add before）
 
 	http://127.0.0.1:9001/show
-
-
-##### Start dev
+### Start dev
 
 	supervisor --harmony index.js
