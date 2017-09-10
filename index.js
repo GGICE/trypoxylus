@@ -13,20 +13,20 @@ var mongoUrl = 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' 
 mongoose.connect(mongoUrl, {
   useMongoClient: true,
 })
-var db = mongoose.connection.on("error", function (err) {
+var db = mongoose.connection.on('error', function (err) {
   console.log(err)
 })
 
 //load models
-var modelsPath = "./models"
+var modelsPath = './models'
 fs.readdirSync(modelsPath).forEach(function (file) {
-  if (~file.indexOf("js")) {
-    require(modelsPath + "/" + file)
+  if (~file.indexOf('js')) {
+    require(modelsPath + '/' + file)
   }
 })
 
 // routes
-require("./routes")(app, router)
+require('./routes')(app, router)
 
 if (!module.parent) app.listen(config.port, function () {
   console.log('listening to http://localhost:' + config.port)
