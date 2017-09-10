@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 module.exports = async function (ctx, next) {
   var users = await user.find({
     name: 'xiaoming'
-  }).exec(function(doc, error) {
+  }).exec(function (doc, error) {
     if (error) {
       console.log(error)
     }
