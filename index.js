@@ -10,9 +10,7 @@ var config = require('./config/config')
 
 //connect to database
 var mongoUrl = 'mongodb://' + config.mongo.host + ':' + config.mongo.port + '/' + config.mongo.database
-mongoose.connect(mongoUrl, {
-  useMongoClient: true,
-})
+mongoose.connect(mongoUrl, {})
 var db = mongoose.connection.on('error', function (err) {
   console.log(err)
 })

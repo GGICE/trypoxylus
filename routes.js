@@ -1,6 +1,6 @@
-var index = require('./routes/index'),
-    add = require('./routes/add'),
-    show = require('./routes/show')
+var index = require('./controller/index'),
+    add = require('./controller/add'),
+    show = require('./controller/show')
 
 module.exports = function(app, router) {
   app.use(router.routes())
