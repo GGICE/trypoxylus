@@ -1,0 +1,18 @@
+{
+  "scripts": {
+    "start": "ts-node ./src"
+  },
+  "dependencies": {
+    "koa": "^2.11.0"
+  },
+  "devDependencies": {
+    "tslint-config-alloy": "^0.2.1",
+    "@types/koa": "^2.11.3",
+    "install": "^0.13.0",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.1",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  }
+}
