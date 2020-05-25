@@ -1,1 +1,1 @@
-import sequelize from 'sequelize';
+import * as sequelize from 'sequelize';

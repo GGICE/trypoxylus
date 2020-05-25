@@ -3,6 +3,7 @@
     "start": "ts-node ./src"
   },
   "dependencies": {
+    "@types/koa-router": "^7.4.1",
     "koa": "^2.11.0",
     "koa-router": "^8.0.8",
     "mysql2": "^2.1.0",

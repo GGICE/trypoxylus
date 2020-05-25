@@ -8,7 +8,7 @@ export function initRouters(app: Koa, router: Router, appPath: string) {
 
   fs.readdirSync(routerPath).forEach((file) => {
     if (~file.indexOf('js') || ~file.indexOf('ts')) {
-      const ctrl = require(routerPath + '/' + file).default;
+      const ctrl = require(routerPath + '/' + file);
 
       if (!ctrl.router) {
         throw new Error('Not set router!');
@@ -21,6 +21,39 @@ export function initRouters(app: Koa, router: Router, appPath: string) {
       if (ctrl.post) {
         router.post(ctrl.router, ctrl.post);
       }
+
+      if (ctrl.put) {
+        router.put(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.delete) {
+        router.delete(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.head) {
+        router.head(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.options) {
+        router.options(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.patch) {
+        router.patch(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.all) {
+        router.all(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.link) {
+        router.link(ctrl.router, ctrl.post);
+      }
+
+      if (ctrl.unlink) {
+        router.unlink(ctrl.router, ctrl.post);
+      }
+
     }
   });
 }
