@@ -1,3 +1,4 @@
+import { CtrlModule } from 'common/controller';
 import * as fs from 'fs';
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
@@ -8,7 +9,7 @@ export function initRouters(app: Koa, router: Router, appPath: string) {
 
   fs.readdirSync(routerPath).forEach((file) => {
     if (~file.indexOf('js') || ~file.indexOf('ts')) {
-      const ctrl = require(routerPath + '/' + file);
+      const ctrl: CtrlModule = require(routerPath + '/' + file);
 
       if (!ctrl.router) {
         throw new Error('Not set router!');
