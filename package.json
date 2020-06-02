@@ -1,4 +1,6 @@
 {
+  "name": "trypoxylus",
+  "version": "0.0.1",
   "scripts": {
     "start": "ts-node ./src"
   },
@@ -18,5 +20,6 @@
     "tslint-config-alloy": "^0.2.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3"
-  }
+  },
+  "types": "./src/main.d.ts"
 }

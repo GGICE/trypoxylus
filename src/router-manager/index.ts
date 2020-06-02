@@ -1,4 +1,4 @@
-import { CtrlModule } from 'common/controller';
+import { CtrlModule } from 'common/index';
 import * as fs from 'fs';
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
