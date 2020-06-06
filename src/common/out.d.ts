@@ -1,4 +1,5 @@
 import * as Koa from 'koa';
+import * as Sequelize from 'sequelize';
 
 export interface CtrlModule {
   router: string
@@ -12,4 +13,10 @@ export interface CtrlModule {
   all?: (ctx: Koa.Context) => {}
   link?: (ctx: Koa.Context) => {}
   unlink?: (ctx: Koa.Context) => {}
+}
+
+export interface Model {
+  modelName: string
+  attributes: Sequelize.ModelAttributes,
+  modelOptions?: Sequelize.ModelOptions
 }
