@@ -1,16 +1,15 @@
 import Koa from 'koa';
 import Router from 'koa-router';
-import * as path from 'path';
 import { initRouters } from './router-manager';
 
 const app = new Koa();
 const router = new Router();
-const port = 3000;
-const appPath = path.join(__dirname, '../app/');
+const defualtPort = 3000;
 
-app.use(router.routes())
-  .use(router.allowedMethods());
+export function start(appPath: string, port?: number) {
+  app.use(router.routes())
+    .use(router.allowedMethods());
 
-initRouters(app, router, appPath);
-
-app.listen(port);
+  initRouters(app, router, appPath);
+  app.listen(port || defualtPort);
+}

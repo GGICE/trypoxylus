@@ -1,11 +1,19 @@
 {
   "name": "trypoxylus",
   "version": "0.0.1",
+  "files": [
+    "src",
+    "bin"
+  ],
+  "bin": {
+    "trypoxylus": "src/index.ts"
+  },
   "scripts": {
     "start": "ts-node ./src"
   },
   "dependencies": {
     "@types/koa-router": "^7.4.1",
+    "commander": "^5.1.0",
     "koa": "^2.11.0",
     "koa-router": "^8.0.8",
     "mysql2": "^2.1.0",

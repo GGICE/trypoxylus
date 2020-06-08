@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "ts-node node_modules/trypoxylus/src/index.ts ./"
+  },
+  "dependencies": {
+    "trypoxylus": "^0.0.1"
+  }
+}

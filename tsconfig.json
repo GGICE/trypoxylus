@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "module": "None",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "importHelpers": true,
     "esModuleInterop": true,
-    "sourceMap": true,
+    "declaration": true,
+    "sourceMap": false,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
