@@ -1,18 +1,4 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "esModuleInterop": true,
-    "declaration": true,
-    "sourceMap": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "utils/*": ["src/utils/*"],
-      "common/*": ["src/common/*"]
-    },
-    "allowSyntheticDefaultImports": true
   }
 }

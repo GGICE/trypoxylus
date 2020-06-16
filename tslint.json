@@ -1,8 +1,0 @@
-{
-  "extends": ["tslint-config-alloy", "tslint-config-prettier"],
-  "linterOptions": {
-      "exclude": ["**/node_modules/**"]
-  },
-  "rules": {
-  }
-}
