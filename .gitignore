@@ -6,3 +6,4 @@
 *.js.map
 dist
 node_modules
+demo/config.ts
