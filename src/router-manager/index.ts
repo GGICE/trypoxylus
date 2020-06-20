@@ -21,11 +21,10 @@ export async function initRouters(
   let routerPath = path.join(appPath, "controllers");
 
   for (const file of Deno.readDirSync(routerPath)) {
-    console.log(file.name);
     if (!file || !file.name) {
       return;
     }
-    if (file.name.indexOf("js") || file.name.indexOf("ts")) {
+    if (file.name.indexOf("ts") > -1) {
       import(routerPath + "/" + file.name).then(
         ({ controller }: { controller: ICtrl }) => {
           if (!controller.router) {

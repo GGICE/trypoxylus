@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-net --allow-read
+#!/usr/bin/env -S deno run --allow-net --allow-read --allow-write
 
 import Denomander from "https://deno.land/x/denomander/mod.ts";
 import { start } from "../src/index.ts";

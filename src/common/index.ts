@@ -1,4 +1,4 @@
-import { Model } from 'https://deno.land/x/denodb/mod.ts';
+import { Model } from "https://deno.land/x/denodb/mod.ts";
 import { Context } from "https://deno.land/x/oak/mod.ts";
 export interface ICtrl {
   router: string;
