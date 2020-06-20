@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "https://deno.land/x/denodb/mod.ts";
 
 export class model extends Model {
-  static table = 'user';
+  static table = "user";
 
   static timestamps = true;
 

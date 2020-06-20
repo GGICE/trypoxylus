@@ -6,14 +6,14 @@ export const controller = {
     try {
       const reuslt = await ctx.state.models.user.create({
         id: 12,
-        name: 'ggice',
+        name: "ggice",
       });
       ctx.response.body = reuslt;
     } catch (e) {
-      console.log('e', e);
+      console.log("e", e);
       ctx.response.status = 500;
       ctx.response.body = {
-        error: e.toString()
+        error: e.toString(),
       };
     }
   },

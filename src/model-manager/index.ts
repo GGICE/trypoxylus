@@ -5,7 +5,7 @@ import { getConfig } from "../utils/configer.ts";
 import { IModel } from "../common/index.ts";
 
 class User extends Model {
-  static table = 'user';
+  static table = "user";
 
   static timestamps = true;
 
@@ -25,7 +25,7 @@ class User extends Model {
 }
 
 export async function initModel(app: Application, appPath: string) {
-  console.log('2232');
+  console.log("2232");
   const {
     databasePort,
     databaseHost,
@@ -43,7 +43,7 @@ export async function initModel(app: Application, appPath: string) {
     username: databaseUserName!,
     password: databaseUserPassword!,
     database: databaseName,
-    port: databasePort
+    port: databasePort,
   });
 
   try {
@@ -65,7 +65,7 @@ export async function initModel(app: Application, appPath: string) {
     try {
       await db.sync();
     } catch (e) {
-      console.warn('db sync error');
+      console.warn("db sync error");
     }
   } catch (e) {
     console.error("Set models Fail!", e);
