@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-net --allow-read --allow-write
+#!/usr/bin/env -S deno run --allow-net --allow-read --allow-write --unstable
 
 import Denomander from "https://deno.land/x/denomander/mod.ts";
 import { start } from "../src/index.ts";
@@ -12,8 +12,7 @@ const program = new Denomander(
 );
 
 program
-  .command("start", "start")
-  .requiredOption("-d, --dir", "Project dir")
+  .command("start [dir]", "start")
   .option("-p, --port ", "Listen on port")
   .parse(Deno.args);
 
