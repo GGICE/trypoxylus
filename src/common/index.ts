@@ -17,5 +17,5 @@ export type IModel = Model;
 export interface Iconfig {
   databaseUri: string;
   databaseName?: string;
-  port?: string;
+  port?: number;
 }
