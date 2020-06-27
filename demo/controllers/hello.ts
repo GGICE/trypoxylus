@@ -4,7 +4,7 @@ export const controller = {
   router: "/hello",
   get: async (ctx: Context) => {
     try {
-      const reuslt = await ctx.state.models.user.create({
+      const reuslt = await ctx.state.models.demo.create({
         id: 12,
         name: "ggice",
       });

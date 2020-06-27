@@ -4,46 +4,19 @@ import { DataTypes, Database, Model } from "https://deno.land/x/denodb/mod.ts";
 import { getConfig } from "../utils/configer.ts";
 import { IModel } from "../common/index.ts";
 
-class User extends Model {
-  static table = "user";
-
-  static timestamps = true;
-
-  static fields = {
-    id: {
-      primaryKey: true,
-      autoIncrement: true,
-    },
-    name: DataTypes.STRING,
-    email: {
-      type: DataTypes.STRING,
-      unique: true,
-      allowNull: false,
-      length: 50,
-    },
-  };
-}
-
 export async function initModel(app: Application, appPath: string) {
-  console.log("2232");
   const {
-    databasePort,
-    databaseHost,
+    databaseUri,
     databaseName,
-    databaseUserName,
-    databaseUserPassword,
   } = await getConfig();
 
-  if (!databaseHost || !databaseName) {
+  if (!databaseUri || !databaseName) {
     return;
   }
 
-  const db = new Database("mysql", {
-    host: databaseHost,
-    username: databaseUserName!,
-    password: databaseUserPassword!,
+  const db = new Database("mongo", {
+    uri: databaseUri,
     database: databaseName,
-    port: databasePort,
   });
 
   try {

@@ -15,10 +15,7 @@ export interface ICtrl {
 export type IModel = Model;
 
 export interface Iconfig {
-  databaseHost?: string;
-  databasePort?: number;
+  databaseUri: string;
   databaseName?: string;
-  databaseUserName?: string;
-  databaseUserPassword?: string;
   port?: string;
 }

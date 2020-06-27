@@ -1,9 +1,6 @@
 .DS_Store
-.sass-cache
 .tmp
 .idea
-*.js
-*.js.map
 dist
-node_modules
 demo/config.ts
+.deno_plugins
