@@ -1,5 +1,7 @@
 import { Model } from "https://deno.land/x/denodb/mod.ts";
 import { Context } from "https://deno.land/x/oak/mod.ts";
+import { CorsOptions } from "https://deno.land/x/cors/mod.ts";
+
 export interface ICtrl {
   router: string;
   get?: (ctx: Context) => void;
@@ -18,4 +20,5 @@ export interface Iconfig {
   databaseUri: string;
   databaseName?: string;
   port?: number;
+  corsOptions?: CorsOptions
 }
