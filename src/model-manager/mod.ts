@@ -1,8 +1,7 @@
 import { Application } from "https://deno.land/x/oak/mod.ts";
 import * as path from "https://deno.land/std/path/mod.ts";
-import { DataTypes, Database, Model } from "https://deno.land/x/denodb/mod.ts";
+import { Database } from "https://deno.land/x/denodb/mod.ts";
 import { getConfig } from "../utils/configer.ts";
-import { IModel } from "../common/index.ts";
 
 export async function initModel(app: Application, appPath: string) {
   const {

@@ -1,4 +1,4 @@
-import { Iconfig } from "../common/index.ts";
+import { Iconfig } from "../common/mod.ts";
 
 let config: Iconfig | undefined;
 

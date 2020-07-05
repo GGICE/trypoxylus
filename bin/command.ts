@@ -1,5 +1,5 @@
 import Denomander from "https://deno.land/x/denomander/mod.ts";
-import { start } from "../src/index.ts";
+import { start } from "../src/mod.ts";
 
 export async function command () {
   const program = new Denomander(

@@ -1,6 +1,6 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import * as path from "https://deno.land/std/path/mod.ts";
-import { ICtrl } from "../common/index.ts";
+import { ICtrl } from "../common/mod.ts";
 
 const SUPPORT_METHOD_LIST = [
   "get",

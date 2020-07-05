@@ -1,7 +1,7 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import { oakCors } from "https://deno.land/x/cors/mod.ts";
-import { initModel } from "./model-manager/index.ts";
-import { initRouters } from "./router-manager/index.ts";
+import { initModel } from "./model-manager/mod.ts";
+import { initRouters } from "./router-manager/mod.ts";
 import { getConfig } from "./utils/configer.ts";
 
 const app = new Application();
@@ -22,7 +22,7 @@ export async function start(appPath: string, port?: number) {
   initRouters(app, router, appPath);
   initModel(app, appPath);
 
-  app.listen({ port });
+  app.listen({ port: port! });
 
   console.log("Listening", port);
 }
