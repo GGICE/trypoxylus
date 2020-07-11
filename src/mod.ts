@@ -3,6 +3,7 @@ import { oakCors } from "https://deno.land/x/cors/mod.ts";
 import { initModel } from "./model-manager/mod.ts";
 import { initRouters } from "./router-manager/mod.ts";
 import { getConfig } from "./utils/configer.ts";
+import { initMiddleware } from './middleware-manager/mod.ts';
 
 const app = new Application();
 const router = new Router();
@@ -13,6 +14,8 @@ export async function start(appPath: string, port?: number) {
 
   const configs = await getConfig();
   port = port || configs.port || defualtPort;
+
+  await initMiddleware(app, appPath);
 
   app
     .use(oakCors(configs.corsOptions))

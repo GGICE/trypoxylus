@@ -1,0 +1,10 @@
+{
+  "$schema": "https://deno.land/x/denon/schema.json",
+  "scripts": {
+    "start": {
+      "cmd": "deno run --allow-net --allow-read --allow-write --allow-plugin --unstable ./bin/command.ts start ./demo",
+      "desc": "run demo",
+      "watch": true
+    }
+  }
+}
