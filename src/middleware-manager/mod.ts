@@ -3,7 +3,7 @@ import * as path from "https://deno.land/std/path/mod.ts";
 
 export async function initMiddleware(app: Application, appPath: string) {
   try {
-    const middlewarePath = path.join(appPath, "middleware");
+    const middlewarePath = path.join(appPath, "middlewares");
 
     for (const file of Deno.readDirSync(middlewarePath)) {
       if (!file || !file.name) {
@@ -11,7 +11,6 @@ export async function initMiddleware(app: Application, appPath: string) {
       }
       if (file.name.indexOf("ts") > -1) {
         const middleware = (await import(middlewarePath + "/" + file.name)).middleware;
-        console.log('middleware', middleware);
         app.use(middleware);
       }
     }
