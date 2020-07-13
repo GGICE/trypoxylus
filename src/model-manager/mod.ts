@@ -2,6 +2,7 @@ import { Application } from "https://deno.land/x/oak/mod.ts";
 import * as path from "https://deno.land/std/path/mod.ts";
 import { Database } from "https://deno.land/x/denodb/mod.ts";
 import { getConfig } from "../utils/configer.ts";
+import { isIgnoreError } from '../utils/mod.ts';
 
 export async function initModel(app: Application, appPath: string) {
   const {
@@ -25,7 +26,7 @@ export async function initModel(app: Application, appPath: string) {
     let list = [];
     for (const file of Deno.readDirSync(modelPath)) {
       if (!file || !file.name) {
-        return;
+        continue;
       }
       if (file.name.indexOf("ts") > -1) {
         const model = (await import(modelPath + "/" + file.name)).model;
@@ -40,6 +41,7 @@ export async function initModel(app: Application, appPath: string) {
       console.warn("db sync error");
     }
   } catch (e) {
+    if (isIgnoreError(e)) return;
     console.error("Set models Fail!", e);
   }
 }

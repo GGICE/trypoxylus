@@ -1,5 +1,6 @@
 import { Application } from "https://deno.land/x/oak/mod.ts";
 import * as path from "https://deno.land/std/path/mod.ts";
+import { isIgnoreError } from '../utils/mod.ts';
 
 export async function initMiddleware(app: Application, appPath: string) {
   try {
@@ -7,14 +8,20 @@ export async function initMiddleware(app: Application, appPath: string) {
 
     for (const file of Deno.readDirSync(middlewarePath)) {
       if (!file || !file.name) {
-        return;
+        continue;
       }
       if (file.name.indexOf("ts") > -1) {
-        const middleware = (await import(middlewarePath + "/" + file.name)).middleware;
+        let middleware;
+        try {
+          middleware = (await import(middlewarePath + "/" + file.name)).middleware;
+        } catch (e) {
+          continue;
+        }
         app.use(middleware);
       }
     }
   } catch (e) {
+    if (isIgnoreError(e)) return;
     console.error("Set middleware Fail!", e);
   }
 }
