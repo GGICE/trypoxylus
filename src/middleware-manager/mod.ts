@@ -13,7 +13,7 @@ export async function initMiddleware(app: Application, appPath: string) {
       if (file.name.indexOf("ts") > -1) {
         let middleware;
         try {
-          middleware = (await import(middlewarePath + "/" + file.name)).middleware;
+          middleware = (await import(path.join("file://",middlewarePath, file.name))).middleware;
         } catch (e) {
           continue;
         }

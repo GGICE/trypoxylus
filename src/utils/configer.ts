@@ -5,9 +5,7 @@ let config: Iconfig | undefined;
 
 export const getConfig = async (): Promise<Iconfig> => {
   const appPath = (globalThis as any).APP_PATH;
-  const configPath = path.join(appPath, "config.ts");
-
-  console.log('configPath: ', configPath, appPath);
+  const configPath = path.join("file://", appPath, "config.ts");
 
   config = config || (await import(configPath)).default;
   return config!;

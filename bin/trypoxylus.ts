@@ -7,7 +7,7 @@ const program = new Denomander(
   {
     app_name: "Trypoxylus",
     app_description: "Trypoxylus",
-    app_version: "0.0.1",
+    app_version: "0.0.3",
   },
 );
 
@@ -16,15 +16,7 @@ program
   .option("-p, --port ", "Listen on port")
   .parse(Deno.args);
 
-const { dir } = program;
-let realDir: string;
-
-if (dir.startsWith('/')) {
-  realDir = dir;
-} else {
-  Deno.chdir(Deno.cwd());
-  realDir = await Deno.realPath(program.dir);
-}
+const realDir = await Deno.realPath(program.dir);
 
 console.log('Start app: ', realDir);
 

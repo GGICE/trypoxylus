@@ -1,13 +1,12 @@
 {
-  "$schema": "https://deno.land/x/denon/schema.json",
   "scripts": {
     "start": {
-      "cmd": "deno run --allow-net --allow-read --allow-write --allow-plugin --unstable ./bin/command.ts start ./demo",
+      "cmd": "deno run --allow-net --allow-read --allow-write --allow-plugin --unstable ./bin/trypoxylus.ts start ./demo",
       "desc": "run demo",
       "watch": true
     },
-    "build": {
-      "cmd": "deno bundle bin/command.ts --unstable trypoxylus.js"
+    "install": {
+      "cmd": "deno install -A -f --unstable -n trypoxylus https://deno.land/x/trypoxylus@v0.0.2/bin/command.ts"
     }
   }
 }

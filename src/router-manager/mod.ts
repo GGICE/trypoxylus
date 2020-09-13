@@ -27,7 +27,7 @@ export async function initRouters(
         return;
       }
       if (file.name.indexOf("ts") > -1) {
-        import(routerPath + "/" + file.name).then(
+        import(path.join("file://", routerPath, file.name)).then(
           ({ controller }: { controller: ICtrl }) => {
             if (!controller.router) {
               throw new Error("Not set router!");
