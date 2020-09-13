@@ -16,4 +16,16 @@ program
   .option("-p, --port ", "Listen on port")
   .parse(Deno.args);
 
-start(await Deno.realPath(program.dir), program.port);
+const { dir } = program;
+let realDir: string;
+
+if (dir.startsWith('/')) {
+  realDir = dir;
+} else {
+  Deno.chdir(Deno.cwd());
+  realDir = await Deno.realPath(program.dir);
+}
+
+console.log('Start app: ', realDir);
+
+start(realDir, program.port);
