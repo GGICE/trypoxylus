@@ -1,65 +1,64 @@
+English | [简体中文](https://github.com/GGICE/trypoxylus/blob/master/README_zh-CN.md) 
 
-简体中文 | [English](https://github.com/GGICE/trypoxylus/blob/master/README_en.md)
+Based on Deno's service engine, quickly start server-side development
 
-基于 Deno 的服务引擎，快速开始服务端开发
+# Use
 
-# 使用 
-
-## 安装
+## Installation
 
 ``` shell
 deno install -A -f --unstable https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
 ```
 
-## 编写项目代码
+## Write project code
 
-### 新建项目目录
+### New project directory
 
 ```
 mkdir demo
 ```
-### 创建配置文件
+### Create a configuration file
 
 ```
 vi config.ts
 ```
-内容如下：
+The content is as follows:
 ```
 export default {
-  // 服务启动的端口号
-  port: 9000,
+   // Port number for service startup
+   port: 9000,
 };
 ```
-### 新建 controller
+### New controller
 
 ```
 mkdir controllers && cd controllers && vi hello.ts
 ```
-内容如下：
+The content is as follows:
 
 ```
-import { Context } from "https://deno.land/x/oak/mod.ts";
+import {Context} from "https://deno.land/x/oak/mod.ts";
 
 export const controller = {
-  router: "/hello",
-  get: async (ctx: Context) => {
-    ctx.response.body = 'Hello world';
-  },
+   router: "/hello",
+   get: async (ctx: Context) => {
+     ctx.response.body ='Hello world';
+   },
 };
 
 ```
 
-### 启动项目
+### Startup project
 
-到项目目录的父目录
+To the parent directory of the project directory
 
 ```
 trypoxylus start demo
 ```
-然后访问 `http://localhost:9000/hello`
+Then visit `http://localhost:9000/hello`
 
-## 更多
+## More
 
-有关数据库、中间件的使用详细见 `demo` 目录
+For details on the use of databases and middleware, see the `demo` directory
 
-详细的配置示例 `demo/config-example.ts` 文件
+Detailed configuration example `demo/config-example.ts` file
