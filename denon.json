@@ -1,12 +1,9 @@
 {
   "scripts": {
     "start": {
-      "cmd": "deno run --allow-net --allow-read --allow-write --allow-plugin --unstable ./bin/trypoxylus.ts start ./demo",
+      "cmd": "deno run -A --unstable ./bin/trypoxylus.ts start ./demo",
       "desc": "run demo",
       "watch": true
-    },
-    "install": {
-      "cmd": "deno install -A -f --unstable -n trypoxylus https://deno.land/x/trypoxylus@v0.0.2/bin/command.ts"
     }
   }
 }
