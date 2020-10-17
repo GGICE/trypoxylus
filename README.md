@@ -20,10 +20,9 @@ To address the issue: [#64294112](https://stackoverflow.com/questions/63881639/t
 ```
 
 ### Installation
-`` shell
-deno install -A -f --unstable -c tsconfig.json _COPY2@v0.0.3/bin/trypoxylus.ts
-``
-
+``` shell
+deno install -A -f --unstable -c tsconfig.json https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+```
 
 ## Write project code
 
@@ -36,14 +35,14 @@ mkdir demo
 
 ```
 vi config.ts
-``
+```
 It reads as follows.
 ```
 export default {
   // Port number for service startup
   port: 9000,
 };
-``
+```
 ### New controller
 
 ```
