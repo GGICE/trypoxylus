@@ -5,5 +5,5 @@ export default {
     optionsSuccessStatus: 200,
   },
   databaseUri: "mongodb://127.0.0.1:27017",
-  databaseName: "test"
+  databaseName: "test",
 };

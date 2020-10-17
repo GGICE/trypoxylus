@@ -18,6 +18,6 @@ program
 
 const realDir = await Deno.realPath(program.dir);
 
-console.log('Start app: ', realDir);
+console.log("Start app: ", realDir);
 
 start(realDir, program.port);

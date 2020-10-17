@@ -20,5 +20,5 @@ export interface Iconfig {
   databaseUri: string;
   databaseName?: string;
   port?: number;
-  corsOptions?: CorsOptions
+  corsOptions?: CorsOptions;
 }

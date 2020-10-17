@@ -1,7 +1,7 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
 import * as path from "https://deno.land/std/path/mod.ts";
 import { ICtrl } from "../common/mod.ts";
-import { isIgnoreError } from '../utils/mod.ts';
+import { isIgnoreError } from "../utils/mod.ts";
 
 const SUPPORT_METHOD_LIST = [
   "get",
@@ -32,7 +32,7 @@ export async function initRouters(
             if (!controller.router) {
               throw new Error("Not set router!");
             }
-  
+
             SUPPORT_METHOD_LIST.forEach((key) => {
               const method = controller[key as "get"];
               if (method) {
