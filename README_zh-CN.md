@@ -7,9 +7,23 @@
 
 ## 安装
 
-``` shell
-deno install -A -f --unstable https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+### 设置 tsconfig.json
+为了解决该问题: [#64294112](https://stackoverflow.com/questions/63881639/typescript-import-problem-after-updating-deno/64294112#64294112)，需要设置 `tsconfig.json`。在当前目录新建一个 `tsconfig.json` 文件，内容如下：
+
 ```
+{
+  "compilerOptions": {
+    "importsNotUsedAsValues": "remove",
+    "isolatedModules": false,
+  }
+}
+```
+
+### 安装
+``` shell
+deno install -A -f --unstable -c tsconfig.json https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+```
+
 
 ## 编写项目代码
 
@@ -43,7 +57,7 @@ import { Context } from "https://deno.land/x/oak/mod.ts";
 export const controller = {
   router: "/hello",
   get: async (ctx: Context) => {
-    ctx.response.body = 'Hello world';
+    ctx.response.body = "Hello world";
   },
 };
 
