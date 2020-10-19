@@ -1,4 +1,5 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
+import lodash from 'https://deno.land/x/deno_lodash/mod.ts';
 import * as path from "https://deno.land/std/path/mod.ts";
 import { ICtrl } from "../common/mod.ts";
 import { isIgnoreError } from "../utils/mod.ts";
@@ -36,7 +37,11 @@ export async function initRouters(
             SUPPORT_METHOD_LIST.forEach((key) => {
               const method = controller[key as "get"];
               if (method) {
-                router[key as "get"](controller.router, method);
+                if (lodash.isArrayLike(method)) {
+                  router[key as "get"](controller.router, ...(method as any));
+                } else {
+                  router[key as "get"](controller.router, method);
+                }
               }
             });
           },
