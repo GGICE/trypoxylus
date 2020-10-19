@@ -3,7 +3,6 @@ import * as path from "https://deno.land/std/path/mod.ts";
 import { Database } from "https://deno.land/x/denodb/mod.ts";
 import { getConfig } from "../utils/configer.ts";
 import { isIgnoreError } from "../utils/mod.ts";
-import { join } from "https://deno.land/std@0.67.0/path/win32.ts";
 
 export async function initModel(app: Application, appPath: string) {
   const {
