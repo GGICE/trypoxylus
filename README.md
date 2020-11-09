@@ -1,5 +1,5 @@
 
- [English](https://github.com/GGICE/trypoxylus/blob/master/README.md) | 简体中文
+ English | [简体中文](https://github.com/GGICE/trypoxylus/blob/master/README_zh-CN.md)
 
 Deno-based service engine for fast start of server-side development
 
