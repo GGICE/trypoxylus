@@ -1,6 +1,6 @@
 // deno run --inspect-brk --allow-net --allow-read --allow-write --allow-plugin --unstable
 
-import Denomander from "https://deno.land/x/denomander/mod.ts";
+import Denomander from "https://deno.land/x/denomander2/mod.ts";
 import { start } from "../src/mod.ts";
 
 const program = new Denomander(
