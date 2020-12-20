@@ -1,5 +1,5 @@
 import { Application, Router } from "https://deno.land/x/oak/mod.ts";
-import lodash from 'https://deno.land/x/deno_lodash/mod.ts';
+import { ld } from 'https://deno.land/x/deno_lodash/mod.ts';
 import * as path from "https://deno.land/std/path/mod.ts";
 import { ICtrl } from "../common/mod.ts";
 import { isIgnoreError } from "../utils/mod.ts";
@@ -15,13 +15,13 @@ const SUPPORT_METHOD_LIST = [
   "all",
 ];
 
-export async function initRouters(
+export function initRouters(
   app: Application,
   router: Router,
   appPath: string,
 ) {
   try {
-    let routerPath = path.join(appPath, "controllers");
+    const routerPath = path.join(appPath, "controllers");
 
     for (const file of Deno.readDirSync(routerPath)) {
       if (!file || !file.name) {
@@ -37,7 +37,8 @@ export async function initRouters(
             SUPPORT_METHOD_LIST.forEach((key) => {
               const method = controller[key as "get"];
               if (method) {
-                if (lodash.isArrayLike(method)) {
+                if (ld.isArrayLike(method)) {
+                  // deno-lint-ignore no-explicit-any
                   router[key as "get"](controller.router, ...(method as any));
                 } else {
                   router[key as "get"](controller.router, method);
