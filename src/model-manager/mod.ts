@@ -1,6 +1,4 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
-import * as path from "https://deno.land/std/path/mod.ts";
-import { Database } from "https://deno.land/x/denodb/mod.ts";
+import { Application, path, Database } from "../deps.ts";
 import { getConfig } from "../utils/configer.ts";
 import { isIgnoreError } from "../utils/mod.ts";
 
@@ -23,7 +21,7 @@ export async function initModel(app: Application, appPath: string) {
     const modelPath = path.join(appPath, "models");
 
     app.state.models = app.state.models || {};
-    let list = [];
+    const list = [];
     for (const file of Deno.readDirSync(modelPath)) {
       if (!file || !file.name) {
         continue;
