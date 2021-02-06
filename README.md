@@ -7,21 +7,8 @@ Deno-based service engine for fast start of server-side development
 
 ## Installation
 
-### Set tsconfig.json
-To address the issue: [#64294112](https://stackoverflow.com/questions/63881639/typescript-import-problem-after-updating-deno/64294112#64294112) You need to set up `tsconfig.json`. Create a new `tsconfig.json` file in the current directory with the following contents.
-
-```
-{
-  "compilerOptions": {
-    "imagesNotUsedAsValues": "remove",
-    "isolatedModules": false,
-  }
-}
-```
-
-### Installation
 ``` shell
-deno install -A -f --unstable -c tsconfig.json https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+deno install -Af https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
 ```
 
 ## Write project code
