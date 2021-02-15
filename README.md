@@ -8,7 +8,7 @@ Deno-based service engine for fast start of server-side development
 ## Installation
 
 ``` shell
-deno install -Af https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+deno install -Af https://deno.land/x/trypoxylus/bin/trypoxylus.ts
 ```
 
 ## Write project code

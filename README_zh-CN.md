@@ -8,7 +8,7 @@
 ## 安装
 
 ``` shell
-deno install -Af https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+deno install -Af https://deno.land/x/trypoxylus/bin/trypoxylus.ts
 ```
 
 
