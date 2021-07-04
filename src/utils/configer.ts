@@ -1,12 +1,14 @@
 import * as path from "https://deno.land/std/path/mod.ts";
 import { Iconfig } from "../common/mod.ts";
 
-let config: Iconfig | undefined;
+let config: Iconfig;
 
 export const getConfig = async (): Promise<Iconfig> => {
-  const appPath = (globalThis as any).APP_PATH;
-  const configPath = path.join("file://", appPath, "config.ts");
-
+  const appPath = window.APP_PATH;
+  const configPathOfEnv = Deno.env.get("TY_CONFIG");
+  const configPath = configPathOfEnv
+    ? path.join("file://", configPathOfEnv)
+    : path.join("file://", appPath, "config.ts");
   config = config || (await import(configPath)).default;
-  return config!;
+  return config || undefined;
 };

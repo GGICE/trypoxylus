@@ -3,13 +3,11 @@
 import Denomander from "https://deno.land/x/denomander2/mod.ts";
 import { start } from "../src/mod.ts";
 
-const program = new Denomander(
-  {
-    app_name: "Trypoxylus",
-    app_description: "Trypoxylus",
-    app_version: "0.0.3",
-  },
-);
+const program = new Denomander({
+  app_name: "Trypoxylus",
+  app_description: "Trypoxylus",
+  app_version: "0.0.9",
+});
 
 program
   .command("start [dir]", "start")
