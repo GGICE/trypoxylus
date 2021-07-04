@@ -1,5 +1,4 @@
-import { Application } from "https://deno.land/x/oak/mod.ts";
-import * as path from "https://deno.land/std/path/mod.ts";
+import { Application, path } from "../deps.ts";
 import { isIgnoreError } from "../utils/mod.ts";
 
 export async function initMiddleware(app: Application, appPath: string) {

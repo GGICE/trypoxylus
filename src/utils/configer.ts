@@ -1,4 +1,4 @@
-import * as path from "https://deno.land/std/path/mod.ts";
+import { path } from "../deps.ts";
 import { Iconfig } from "../common/mod.ts";
 
 let config: Iconfig;

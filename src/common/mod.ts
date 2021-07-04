@@ -1,6 +1,4 @@
-import { Model } from "https://deno.land/x/denodb/mod.ts";
-import { Context } from "https://deno.land/x/oak/mod.ts";
-import { CorsOptions } from "https://deno.land/x/cors/mod.ts";
+import { Context, CorsOptions, Model } from "../deps.ts";
 
 export interface ICtrl {
   router: string;

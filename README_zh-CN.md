@@ -7,7 +7,7 @@
 ## 安装
 
 ```shell
-deno install -A -f --unstable -c tsconfig.json https://deno.land/x/trypoxylus@v0.0.3/bin/trypoxylus.ts
+deno install -Af https://deno.land/x/trypoxylus/bin/trypoxylus.ts
 ```
 
 ## 编写项目代码

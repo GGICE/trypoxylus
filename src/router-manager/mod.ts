@@ -1,6 +1,4 @@
-import { Application, Router } from "https://deno.land/x/oak/mod.ts";
-import { ld } from "https://deno.land/x/deno_lodash/mod.ts";
-import * as path from "https://deno.land/std/path/mod.ts";
+import { Application, ld, path, Router } from "../deps.ts";
 import { ICtrl } from "../common/mod.ts";
 import { isIgnoreError } from "../utils/mod.ts";
 
@@ -15,11 +13,7 @@ const SUPPORT_METHOD_LIST = [
   "all",
 ];
 
-export function initRouters(
-  app: Application,
-  router: Router,
-  appPath: string,
-) {
+export function initRouters(app: Application, router: Router, appPath: string) {
   try {
     const routerPath = path.join(appPath, "controllers");
 
