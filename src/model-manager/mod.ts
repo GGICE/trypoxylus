@@ -37,7 +37,7 @@ export async function initModel(app: Application, appPath: string) {
     try {
       await db.sync();
     } catch (e) {
-      console.warn("db sync error");
+      console.warn("db sync error:", e);
     }
   } catch (e) {
     if (isIgnoreError(e)) return;
